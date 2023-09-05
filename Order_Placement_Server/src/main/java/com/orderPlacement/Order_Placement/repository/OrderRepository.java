@@ -1,6 +1,6 @@
-package repository;
+package com.orderPlacement.Order_Placement.repository;
 
-import model.OrderTable;
+import com.orderPlacement.Order_Placement.model.OrderTable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

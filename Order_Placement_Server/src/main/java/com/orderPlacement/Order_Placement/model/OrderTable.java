@@ -1,4 +1,4 @@
-package model;
+package com.orderPlacement.Order_Placement.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

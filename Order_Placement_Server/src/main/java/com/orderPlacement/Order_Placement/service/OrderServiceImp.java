@@ -1,9 +1,9 @@
-package service;
+package com.orderPlacement.Order_Placement.service;
 
-import model.OrderTable;
+import com.orderPlacement.Order_Placement.model.OrderTable;
+import com.orderPlacement.Order_Placement.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.OrderRepository;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
-package controller;
+package com.orderPlacement.Order_Placement.controller;
 
-import model.OrderTable;
+import com.orderPlacement.Order_Placement.model.OrderTable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.OrderServiceImp;
+import com.orderPlacement.Order_Placement.service.OrderServiceImp;
 
 import java.util.List;
 
