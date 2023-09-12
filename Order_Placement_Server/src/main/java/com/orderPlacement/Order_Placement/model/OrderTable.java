@@ -26,5 +26,8 @@ public class OrderTable {
     private Long itemID;
 
     @Column
+    private int quantity;
+
+    @Column
     private LocalDate orderDate;
 }

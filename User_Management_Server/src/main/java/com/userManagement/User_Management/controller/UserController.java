@@ -11,7 +11,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping(path = "/api/v1/")
+@RequestMapping(path = "/api/user/")
 public class UserController {
 
     @Autowired
@@ -26,6 +26,11 @@ public class UserController {
     @GetMapping("getUser/{userID}")
     public ResponseEntity<UserTable> GetUser(@PathVariable Long userID){
         return ResponseEntity.ok(userService.findUser(userID));
+    }
+
+    @GetMapping("{userId}")
+    public boolean CheckUser (@PathVariable Long userId){
+        return this.userService.checkUser(userId);
     }
 
     @GetMapping("getAll")

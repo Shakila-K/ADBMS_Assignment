@@ -1,6 +1,7 @@
 package com.inventoryManagement.Inventory_Management.controller;
 
 import com.inventoryManagement.Inventory_Management.document.InventoryDocument;
+import com.inventoryManagement.Inventory_Management.dto.ItemQtyDTO;
 import com.inventoryManagement.Inventory_Management.service.InventoryServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/documents/")
+@RequestMapping("/api/inventory/")
 public class InventoryController {
 
     @Autowired
@@ -40,6 +41,12 @@ public class InventoryController {
 
     }
 
+    @GetMapping("")
+    public boolean IsInStock(@RequestParam("itemID") Long itemID, @RequestParam("quantity") int quantity){
+        ItemQtyDTO itemQty = new ItemQtyDTO(itemID,quantity);
+        return this.inventoryService.isInStock(itemQty);
+    }
+
     @PutMapping("updateInventory")
     public ResponseEntity<InventoryDocument> UpdateInventory(@RequestBody InventoryDocument inventory){
         InventoryDocument inventoryDocument = this.inventoryService.updateInventory(inventory);
@@ -49,6 +56,11 @@ public class InventoryController {
         else{
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @PutMapping("updateQuantity")
+    public void UpdateQuantity(@RequestParam("itemID") Long itemID, @RequestParam("quantity") int quantity){
+        this.inventoryService.updateQuantity(itemID,quantity);
     }
 
     @DeleteMapping("deleteInventory/{itemID}")

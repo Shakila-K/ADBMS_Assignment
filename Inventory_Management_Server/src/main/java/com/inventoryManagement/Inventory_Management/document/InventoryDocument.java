@@ -18,4 +18,6 @@ public class InventoryDocument {
     private String itemName;
 
     private double itemPrice;
+
+    private int availableQuantity;
 }

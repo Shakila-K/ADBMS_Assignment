@@ -13,8 +13,10 @@ public interface UserService {
 
     public UserTable findUser (Long userId);
 
+    public boolean checkUser (Long userId);
+
     public List<UserTable> findAll ();
     public UserTable updateUser (UserTable user);
 
-    public void deleteUser (Long userId);
+    public String deleteUser (Long userId);
 }
