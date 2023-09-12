@@ -16,27 +16,31 @@ I have used spring webFlux in order to implement communication mechanisms betwee
 
 Here are the URLs for each microservice APIs.
 
-http://localhost:8080/api/user/createUser - Create a new user
-http://localhost:8080/api/user/getUser/{userID} - Get the user information
-http://localhost:8080/api/user/{userId} - Check if a user exists with the given user id
-http://localhost:8080/api/user/getAll - Get All the users
-http://localhost:8080/api/user/updateUser - Update User Information
-http://localhost:8080/api/user/deleteUser/{userID} - Delete a user with givern user id
 
-http://localhost:8081/api/order/createOrder - Create a new order
-http://localhost:8081/api/order/getOrder/{orderId} - Get orders with an order id
-http://localhost:8081/api/order/getAllOrders - Get all orders
-http://localhost:8081/api/order/updateOrder - Update an order information
-http://localhost:8081/api/order/deleteOrder/{orderId} - Delete an order with a given order id
-http://localhost:8081/api/order/deleteUser/{userId} - Delete all orders of a user with a given user id
+User_Management_Server
+  1) http://localhost:8080/api/user/getUser/{userID} - Get the user information
+  2) http://localhost:8080/api/user/{userId} - Check if a user exists with the given user id
+  3) http://localhost:8080/api/user/getAll - Get All the users
+  4) http://localhost:8080/api/user/updateUser - Update User Information
+  5) http://localhost:8080/api/user/deleteUser/{userID} - Delete a user with givern user id
 
-http://localhost:8082/api/inventory/createInventory - Create an inventory item
-http://localhost:8082/api/inventory/getInventory/{itemID} - Get inventory item information with a given item id
-http://localhost:8082/api/inventory/getAllInventory - Get all inventory information
-http://localhost:8082/api/inventory/?itemID={itemId}&quantity={quantity} - Check whether an item exists with given quantity 
-http://localhost:8082/api/inventory/updateInventory - Update inventory item information
-http://localhost:8082/api/inventory/updateQuantity?itemID={itemId}&quantity={quantity} - Remove a given item quantity from the inventory
-http://localhost:8082/api/inventory/deleteInventory/{itemID} - Delete an item from the inventory
+Order_Placement_Server
+  1) http://localhost:8081/api/order/createOrder - Create a new order
+  2) http://localhost:8081/api/order/getOrder/{orderId} - Get orders with an order id
+  3) http://localhost:8081/api/order/getAllOrders - Get all orders
+  4) http://localhost:8081/api/order/updateOrder - Update an order information
+  5) http://localhost:8081/api/order/deleteOrder/{orderId} - Delete an order with a given order id
+  6) http://localhost:8081/api/order/deleteUser/{userId} - Delete all orders of a user with a given user id
+
+Inventory_Management_Server
+  1) http://localhost:8082/api/inventory/createInventory - Create an inventory item
+  2) http://localhost:8082/api/inventory/getInventory/{itemID} - Get inventory item information with a given item id
+  3) http://localhost:8082/api/inventory/getAllInventory - Get all inventory information
+  4) http://localhost:8082/api/inventory/?itemID={itemId}&quantity={quantity} - Check whether an item exists with given quantity
+  5) http://localhost:8082/api/inventory/updateInventory - Update inventory item information
+  6) http://localhost:8082/api/inventory/updateQuantity?itemID={itemId}&quantity={quantity} - Remove a given item quantity from the inventory
+  7) http://localhost:8082/api/inventory/deleteInventory/{itemID} - Delete an item from the inventory
+
 
 Within these 3 microservice, the following communications occur.
   1) Whenever a order is being placed, Order_Placement_Server communicates with User_Management_Server and check if there is a user with the given id.
